@@ -52,11 +52,11 @@ export default function Promo() {
       </div>
 
       <div className="bg-gradient-to-br from-purple-900/40 via-gray-900 to-pink-900/40 rounded-3xl p-6 border border-purple-600/30 shadow-2xl shadow-purple-600/20">
-        {promo.image && (
+        {promo.immagine && (
           <div className="w-full h-64 rounded-2xl mb-6 overflow-hidden">
             <img
-              src={Array.isArray(promo.image) ? promo.image[0].url : promo.image}
-              alt={promo.title}
+              src={promo.immagine}
+              alt={promo.titolo}
               className="w-full h-full object-cover"
             />
           </div>
@@ -65,10 +65,10 @@ export default function Promo() {
         <div className="space-y-4">
           <div className="flex items-center gap-2">
             <Tag size={20} className="text-purple-400" />
-            <h3 className="text-2xl font-bold text-white">{promo.title}</h3>
+            <h3 className="text-2xl font-bold text-white">{promo.titolo}</h3>
           </div>
 
-          <p className="text-gray-300 text-lg leading-relaxed">{promo.description}</p>
+          <p className="text-gray-300 text-lg leading-relaxed">{promo.descrizione}</p>
 
           <div className="mt-6 pt-6 border-t border-purple-900/50">
             <div className="flex items-center justify-center gap-2 text-purple-400 animate-pulse">
