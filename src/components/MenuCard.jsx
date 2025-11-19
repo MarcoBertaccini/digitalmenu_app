@@ -1,0 +1,32 @@
+export default function MenuCard({ item }) {
+  return (
+    <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-5 border border-purple-900/20 hover:border-purple-600/50 transition-all shadow-lg hover:shadow-purple-600/20">
+      {item.image && (
+        <div className="w-full h-40 rounded-xl mb-4 overflow-hidden">
+          <img
+            src={Array.isArray(item.image) ? item.image[0].url : item.image}
+            alt={item.name}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      )}
+
+      <div className="flex justify-between items-start mb-2">
+        <h3 className="text-lg font-semibold text-white">{item.name}</h3>
+        <span className="text-xl font-bold text-purple-400 ml-3">
+          €{typeof item.price === 'number' ? item.price.toFixed(2) : item.price}
+        </span>
+      </div>
+
+      {item.description && (
+        <p className="text-gray-400 text-sm mb-3">{item.description}</p>
+      )}
+
+      <div className="flex items-center justify-between">
+        <span className="text-xs px-3 py-1 rounded-full bg-purple-900/30 text-purple-300 border border-purple-700/50">
+          {item.category}
+        </span>
+      </div>
+    </div>
+  );
+}
