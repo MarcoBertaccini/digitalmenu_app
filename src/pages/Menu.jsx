@@ -19,12 +19,12 @@ export default function Menu() {
     setLoading(false);
   };
 
-  const categories = ['Tutti', ...new Set(menuItems.map((item) => item.category))];
+  const categories = ['Tutti', ...new Set(menuItems.map((item) => item.categoria))];
 
   const filteredItems =
     selectedCategory === 'Tutti'
       ? menuItems
-      : menuItems.filter((item) => item.category === selectedCategory);
+      : menuItems.filter((item) => item.categoria === selectedCategory);
 
   if (loading) {
     return (
